@@ -9,12 +9,21 @@ import com.example.androidlivedata.data.repositories.MovieRepository
 import com.example.androidlivedata.util.Coroutines
 import com.example.androidlivedata.util.NoInternetException
 
-class MainViewModel constructor(private val movieRepository: MovieRepository) : ViewModel() {
+class MainViewModel(private val movieRepository: MovieRepository) : ViewModel() {
 
-    val TAG = "MovieListViewModel"
+    private val TAG = "MovieListViewModel"
     private val _movies = MutableLiveData<List<Movie>>()
-    val movies: LiveData<List<Movie>>
+    private val movies: LiveData<List<Movie>>
         get() = _movies
+    var data: MutableLiveData<String> = MutableLiveData<String>()
+
+    fun setDate(value: String) {
+        data.postValue(value)
+    }
+
+    fun getData(): LiveData<String> {
+        return data
+    }
 
     fun getMovieList(): LiveData<List<Movie>> {
         Log.i(TAG, "Get Movies")
