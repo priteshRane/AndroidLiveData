@@ -1,4 +1,4 @@
-package com.example.androidlivedata.ui.stringexample.list
+package com.example.androidlivedata.ui.stringexample
 
 import android.os.Bundle
 import android.util.Log
@@ -13,19 +13,19 @@ import androidx.navigation.Navigation
 import com.example.androidlivedata.MainActivity
 import com.example.androidlivedata.MainViewModel
 import com.example.androidlivedata.R
-import com.example.androidlivedata.databinding.FragmentListBinding
+import com.example.androidlivedata.databinding.FragmentFirstBinding
 
-class ListFragment : Fragment() {
+class FirstFragment : Fragment() {
 
     private val TAG = "ListFragment"
     lateinit var viewModel: MainViewModel
-    lateinit var binding: FragmentListBinding
+    lateinit var binding: FragmentFirstBinding
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_list, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_first, container, false)
         return binding.root
     }
 
@@ -40,7 +40,7 @@ class ListFragment : Fragment() {
         binding.btnSend.setOnClickListener {
             viewModel.setDate(binding.etData.text.toString())
 
-            val action = ListFragmentDirections.actionListFragmentToDetailsFragment()
+            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
             Navigation.findNavController(it).navigate(action)
         }
     }

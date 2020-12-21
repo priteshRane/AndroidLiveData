@@ -1,4 +1,4 @@
-package com.example.androidlivedata.ui.stringexample.details
+package com.example.androidlivedata.ui.stringexample
 
 import android.os.Bundle
 import android.util.Log
@@ -13,18 +13,18 @@ import androidx.navigation.fragment.findNavController
 import com.example.androidlivedata.MainActivity
 import com.example.androidlivedata.MainViewModel
 import com.example.androidlivedata.R
-import com.example.androidlivedata.databinding.FragmentDetailsBinding
+import com.example.androidlivedata.databinding.FragmentSecondBinding
 
-class DetailsFragment : Fragment() {
+class SecondFragment : Fragment() {
 
     private val TAG = "DetailFragment"
     lateinit var viewModel: MainViewModel
-    lateinit var binding: FragmentDetailsBinding
+    lateinit var binding: FragmentSecondBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_second, container, false)
         return binding.root
     }
 

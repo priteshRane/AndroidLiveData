@@ -26,7 +26,7 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.btnStringExample.setOnClickListener {
-            val action = MainFragmentDirections.actionMainFragmentToListFragment()
+            val action = MainFragmentDirections.actionMainFragmentToFirstFragment()
             Navigation.findNavController(it).navigate(action)
         }
     }
