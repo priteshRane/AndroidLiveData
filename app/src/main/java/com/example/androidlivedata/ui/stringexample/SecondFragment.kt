@@ -31,13 +31,13 @@ class SecondFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(requireActivity(), (this.activity as MainActivity).viewModelFactory).get(MainViewModel::class.java)
-        viewModel.getData().observe(viewLifecycleOwner, Observer {
+        viewModel.getDataString().observe(viewLifecycleOwner, Observer {
             Log.i(TAG, it)
             binding.etData.setText(it)
         })
 
         binding.btnSend.setOnClickListener {
-            viewModel.setDate(binding.etData.text.toString())
+            viewModel.setDataString(binding.etData.text.toString())
 
             findNavController().popBackStack()
         }

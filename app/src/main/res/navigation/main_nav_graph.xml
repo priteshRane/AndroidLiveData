@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_firstFragment"
             app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_RVDummyDataListFragment"
+            app:destination="@id/RVDummyDataListFragment" />
     </fragment>
     <fragment
         android:id="@+id/firstFragment"
@@ -28,4 +31,22 @@
         android:name="com.example.androidlivedata.ui.stringexample.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/RVDummyDataListFragment"
+        android:name="com.example.androidlivedata.ui.recyclerviewexample.list.RVDummyDataListFragment"
+        android:label="fragment_rv_dummy_data_list"
+        tools:layout="@layout/fragment_rv_dummy_data_list" >
+        <action
+            android:id="@+id/action_RVDummyDataListFragment_to_RVDummyDataDetailsFragment"
+            app:destination="@id/RVDummyDataDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RVDummyDataDetailsFragment"
+        android:name="com.example.androidlivedata.ui.recyclerviewexample.details.RVDummyDataDetailsFragment"
+        android:label="fragment_rv_dummy_data_details"
+        tools:layout="@layout/fragment_rv_dummy_data_details" >
+        <argument
+            android:name="movie"
+            app:argType="com.example.androidlivedata.data.network.responses.Movie" />
+    </fragment>
 </navigation>
