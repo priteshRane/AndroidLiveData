@@ -1,4 +1,4 @@
-package com.example.androidlivedata.ui.recyclerviewdummyexample.list
+package com.example.androidlivedata.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.androidlivedata.R
 import com.example.androidlivedata.data.network.responses.Movie
 
-class RVDummyDataListAdapter(private val listener: RVDummyDataListClickInterface) : RecyclerView.Adapter<RVDummyDataListAdapter.MyViewHolder>() {
+class RecyclerViewListAdapter(private val listener: RecyclerViewListClickInterface) : RecyclerView.Adapter<RecyclerViewListAdapter.MyViewHolder>() {
     private var movies = mutableListOf<Movie>()
 
     fun addMovies(_movies: List<Movie>) {
@@ -30,7 +30,7 @@ class RVDummyDataListAdapter(private val listener: RVDummyDataListClickInterface
         return MyViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: RVDummyDataListAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerViewListAdapter.MyViewHolder, position: Int) {
         val movie: Movie = movies[position]
         Glide.with(holder.tvPoster).load(movie.posterUrl).into(holder.tvPoster)
         holder.tvName.text = movie.name

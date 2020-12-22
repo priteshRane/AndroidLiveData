@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainFragment_to_RVDummyDataListFragment"
             app:destination="@id/RVDummyDataListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_RVApiDataListFragment"
+            app:destination="@id/RVApiDataListFragment" />
     </fragment>
     <fragment
         android:id="@+id/firstFragment"
@@ -45,6 +48,24 @@
         android:name="com.example.androidlivedata.ui.recyclerviewdummyexample.details.RVDummyDataDetailsFragment"
         android:label="fragment_rv_dummy_data_details"
         tools:layout="@layout/fragment_rv_dummy_data_details" >
+        <argument
+            android:name="movie"
+            app:argType="com.example.androidlivedata.data.network.responses.Movie" />
+    </fragment>
+    <fragment
+        android:id="@+id/RVApiDataListFragment"
+        android:name="com.example.androidlivedata.ui.recyclerviewdummyexample.list.RVApiDataListFragment"
+        android:label="fragment_rv_api_data_list"
+        tools:layout="@layout/fragment_rv_api_data_list" >
+        <action
+            android:id="@+id/action_RVApiDataListFragment_to_RVApiDataDetailsFragment"
+            app:destination="@id/RVApiDataDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RVApiDataDetailsFragment"
+        android:name="com.example.androidlivedata.ui.recyclerviewdummyexample.details.RVApiDataDetailsFragment"
+        android:label="fragment_rv_api_data_details"
+        tools:layout="@layout/fragment_rv_api_data_details" >
         <argument
             android:name="movie"
             app:argType="com.example.androidlivedata.data.network.responses.Movie" />

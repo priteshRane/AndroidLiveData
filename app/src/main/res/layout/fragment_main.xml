@@ -28,5 +28,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_string_example" />
 
+        <Button
+            android:id="@+id/btn_recyclerview_with_api_example"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/recyclerview_with_api_example"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_recyclerview_with_dummy_data_example" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

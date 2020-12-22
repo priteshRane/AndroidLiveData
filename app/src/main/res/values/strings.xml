@@ -9,4 +9,5 @@
     <string name="recyclerview_with_dummy_data_example">RecyclerView with Dummy data example</string>
     <string name="delete">Delete</string>
     <string name="change_rating">Change Rating</string>
+    <string name="recyclerview_with_api_example">RecyclerView with API example</string>
 </resources>

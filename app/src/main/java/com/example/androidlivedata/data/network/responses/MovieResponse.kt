@@ -5,5 +5,5 @@ data class MovieResponse(
     var totalPages: Int?,
     var pageSize: Int?,
     var totalMovies: Int?,
-    var movie: List<Movie>
+    var movie: MutableList<Movie>
 )

@@ -1,8 +1,8 @@
-package com.example.androidlivedata.ui.recyclerviewdummyexample.list
+package com.example.androidlivedata.ui
 
 import android.view.View
 import com.example.androidlivedata.data.network.responses.Movie
 
-interface RVDummyDataListClickInterface {
+interface RecyclerViewListClickInterface {
     fun onMovieItemClick(view: View, movie: Movie)
 }

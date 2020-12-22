@@ -34,5 +34,10 @@ class MainFragment : Fragment() {
             val action = MainFragmentDirections.actionMainFragmentToRVDummyDataListFragment()
             Navigation.findNavController(it).navigate(action)
         }
+
+        binding.btnRecyclerviewWithApiExample.setOnClickListener {
+            val action = MainFragmentDirections.actionMainFragmentToRVApiDataListFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 }

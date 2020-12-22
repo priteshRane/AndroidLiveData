@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.androidlivedata.data.network.responses.Movie
 import com.example.androidlivedata.data.repositories.MovieRepository
-import com.example.androidlivedata.ui.recyclerviewdummyexample.list.RVDummyDataListInterface
+import com.example.androidlivedata.ui.RecyclerViewListInterface
 import com.example.androidlivedata.util.Coroutines
 import com.example.androidlivedata.util.NoInternetException
 import kotlinx.coroutines.delay
@@ -14,7 +14,7 @@ import kotlinx.coroutines.delay
 class MainViewModel(private val movieRepository: MovieRepository) : ViewModel() {
 
     private val TAG = "MovieListViewModel"
-    var recyclerViewListInterface: RVDummyDataListInterface? = null
+    var recyclerViewListInterface: RecyclerViewListInterface? = null
 
     // For String
     var dataString: MutableLiveData<String> = MutableLiveData<String>()
@@ -36,8 +36,8 @@ class MainViewModel(private val movieRepository: MovieRepository) : ViewModel() 
     private val movie10 = Movie(_id = "5fac2fe75e1f6a6200a7bb91", name = "Forrest Gump", year = 1994, rating = 8.8, yourRating = 0, genres = "Drama, Romance", description = "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart. ", duration = "2h 22min", directors = "Robert Zemeckis", writers = "Winston Groom, Eric Roth", stars = "Tom Hanks", posterUrl = "https://firebasestorage.googleapis.com/v0/b/testapis-286008.appspot.com/o/forrest-gump.jpg?alt=media&token=18a48709-a172-4dbc-a661-80447a102cb0", createdAt = "2020-11-11T18:39:35.975Z", updatedAt = "2020-11-11T18:39:35.975Z", _v = null)
 
     // For API data
-    private val _movies = MutableLiveData<List<Movie>>()
-    val movies: LiveData<List<Movie>>
+    private val _movies = MutableLiveData<MutableList<Movie>>()
+    val movies: LiveData<MutableList<Movie>>
         get() = _movies
 
     fun setDataString(value: String) {
@@ -116,6 +116,20 @@ class MainViewModel(private val movieRepository: MovieRepository) : ViewModel() 
             } catch (e: Exception) {
                 Log.i(TAG, e.toString())
             }
+        }
+    }
+
+    fun deleteMovieFromMovies(movie: Movie) {
+        val indexIs: Int? = movies.value?.indexOf(movie)
+        if (indexIs != null) {
+            _movies.value?.removeAt(indexIs)
+        }
+    }
+
+    fun changeRatingFromMovies(movie: Movie) {
+        val indexIs: Int? = movies.value?.indexOf(movie)
+        if (indexIs != null) {
+            _movies.value?.find { it._id == movie._id  }.let { it?.rating = 1.0 }
         }
     }
 }

@@ -19,7 +19,7 @@ import com.example.androidlivedata.ui.RecyclerViewListAdapter
 import com.example.androidlivedata.ui.RecyclerViewListClickInterface
 import com.example.androidlivedata.ui.RecyclerViewListInterface
 
-class RVDummyDataListFragment : Fragment(), RecyclerViewListInterface,
+class RVApiDataListFragment : Fragment(), RecyclerViewListInterface,
     RecyclerViewListClickInterface {
 
     private val TAG = "RVListFragment"
@@ -58,8 +58,8 @@ class RVDummyDataListFragment : Fragment(), RecyclerViewListInterface,
             it.adapter = recylerViewListAdapter
         }
 
-        viewModel.getDataMutableList()
-        viewModel.dataMutableList.observe(viewLifecycleOwner, Observer { movies ->
+        viewModel.getMovieList()
+        viewModel.movies.observe(viewLifecycleOwner, Observer { movies ->
             recylerViewListAdapter.notifyDataSetChanged()
             recylerViewListAdapter.addMovies(movies)
         })
@@ -75,7 +75,7 @@ class RVDummyDataListFragment : Fragment(), RecyclerViewListInterface,
 
     override fun onMovieItemClick(view: View, movie: Movie) {
         val action =
-            RVDummyDataListFragmentDirections.actionRVDummyDataListFragmentToRVDummyDataDetailsFragment(
+            RVApiDataListFragmentDirections.actionRVApiDataListFragmentToRVApiDataDetailsFragment(
                 movie
             )
         Navigation.findNavController(view).navigate(action)
