@@ -33,7 +33,7 @@
         tools:layout="@layout/fragment_second" />
     <fragment
         android:id="@+id/RVDummyDataListFragment"
-        android:name="com.example.androidlivedata.ui.recyclerviewexample.list.RVDummyDataListFragment"
+        android:name="com.example.androidlivedata.ui.recyclerviewdummyexample.list.RVDummyDataListFragment"
         android:label="fragment_rv_dummy_data_list"
         tools:layout="@layout/fragment_rv_dummy_data_list" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/RVDummyDataDetailsFragment"
-        android:name="com.example.androidlivedata.ui.recyclerviewexample.details.RVDummyDataDetailsFragment"
+        android:name="com.example.androidlivedata.ui.recyclerviewdummyexample.details.RVDummyDataDetailsFragment"
         android:label="fragment_rv_dummy_data_details"
         tools:layout="@layout/fragment_rv_dummy_data_details" >
         <argument

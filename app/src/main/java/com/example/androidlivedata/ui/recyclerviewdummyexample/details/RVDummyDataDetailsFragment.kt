@@ -1,4 +1,4 @@
-package com.example.androidlivedata.ui.recyclerviewexample.details
+package com.example.androidlivedata.ui.recyclerviewdummyexample.details
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

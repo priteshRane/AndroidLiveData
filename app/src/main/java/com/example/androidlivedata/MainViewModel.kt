@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.androidlivedata.data.network.responses.Movie
 import com.example.androidlivedata.data.repositories.MovieRepository
-import com.example.androidlivedata.ui.recyclerviewexample.list.RVDummyDataListInterface
+import com.example.androidlivedata.ui.recyclerviewdummyexample.list.RVDummyDataListInterface
 import com.example.androidlivedata.util.Coroutines
 import com.example.androidlivedata.util.NoInternetException
 import kotlinx.coroutines.delay

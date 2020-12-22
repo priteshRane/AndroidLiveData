@@ -1,4 +1,4 @@
-package com.example.androidlivedata.ui.recyclerviewexample.list
+package com.example.androidlivedata.ui.recyclerviewdummyexample.list
 
 interface RVDummyDataListInterface {
 
